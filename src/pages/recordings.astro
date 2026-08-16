@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Recordings | David Thiele — Music Library Available for Sync"
+  description="David Thiele's music library — available for licensing and sync. Listen to the full catalog."
+>
+
+<style>
+.page-hero{background:var(--bg);padding:160px 28px 70px;text-align:center}
+.page-hero h1{font-family:var(--serif);font-size:clamp(34px,4.6vw,58px);font-weight:600;color:var(--text);margin-bottom:16px}
+.page-hero h1 em{font-style:italic;color:var(--accent-bright);font-weight:500}
+.page-hero p{font-size:17px;color:var(--text-body);max-width:560px;margin:0 auto;line-height:1.7}
+.player-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+.player-wrap iframe{width:100%;border:0;display:block;min-height:640px}
+</style>
+
+<div class="page-hero">
+  <span class="tag-line" style="justify-content:center">Music Library</span>
+  <h1>Available for <em>licensing</em> &amp; sync</h1>
+  <p>One-stop, pitch-ready tracks for music supervisors and editors. Press play below to browse the full catalog.</p>
+</div>
+
+<section class="sec sec-1" style="padding-top:0">
+  <div class="container reveal on">
+    <div class="player-wrap">
+      <iframe
+        src="https://davidthiele.disco.ac/e/p/2930075"
+        loading="lazy"
+        allow="autoplay; encrypted-media"
+        title="David Thiele — Music Library on Disco"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="container">
+    <h2>Need something custom?</h2>
+    <p>If nothing in the catalog is quite right, I write and produce custom music for film, TV, and advertising.</p>
+    <a href="/hire-production-mixing-mastering" class="btn-dark">Hire Me to Produce</a>
+  </div>
+</section>
+
+</Layout>

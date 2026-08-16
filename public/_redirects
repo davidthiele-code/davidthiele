@@ -1,0 +1,6 @@
+# Legacy WordPress URL redirects → new Astro site
+/hire-me/*  /hire-production-mixing-mastering  301
+/news/*     /  301
+/welcome/*  /  301
+/wp-admin/* /  301
+/wp-content/* /  301

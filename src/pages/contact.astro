@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact David Thiele | Production, Mixing, Mastering & Sync Licensing"
+  description="Get in touch with David Thiele about production, mixing, mastering, or music licensing for film, TV, and advertising."
+>
+
+<style>
+.page-hero{background:var(--bg);padding:160px 28px 70px;text-align:center}
+.page-hero h1{font-family:var(--serif);font-size:clamp(32px,4.4vw,54px);font-weight:600;color:var(--text);margin-bottom:16px}
+.page-hero p{font-size:17px;color:var(--text-body);max-width:560px;margin:0 auto;line-height:1.7}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:64px}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 36px;text-align:center;transition:box-shadow 0.3s,border-color 0.3s}
+.contact-card:hover{box-shadow:var(--shadow-lg);border-color:rgba(212,166,74,0.35)}
+.contact-card h2{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--text);margin-bottom:10px}
+.contact-card p{font-size:14.5px;color:var(--text-body);line-height:1.7;margin-bottom:26px}
+.info-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.info-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;text-align:center}
+.info-box h3{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.info-box p{font-family:var(--sans);font-size:13.5px;color:var(--text-body);line-height:1.65}
+@media(max-width:860px){.contact-grid,.info-row{grid-template-columns:1fr}}
+</style>
+
+<div class="page-hero">
+  <span class="tag-line" style="justify-content:center">Contact</span>
+  <h1>Let's make something.</h1>
+  <p>Whether it's a sync inquiry, a production project, or just a question — reach out below.</p>
+</div>
+
+<section class="sec sec-1" style="padding-top:0">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h2>Email</h2>
+        <p>The best way to reach me. Tell me a bit about the project and I'll follow up.</p>
+        <a href="mailto:david@macawish.com?subject=Music%20Inquiry" class="btn-gold">david@macawish.com</a>
+      </div>
+      <div class="contact-card reveal">
+        <h2>Phone</h2>
+        <p>Prefer to talk it through? Call or text and I'll get back to you.</p>
+        <a href="tel:5035679858" class="btn-gold">(503) 567-9858</a>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="info-box reveal">
+        <h3>Sync &amp; Licensing</h3>
+        <p>THEEL GOOD MUSIC (BMI) — one-stop, pitch-ready tracks for supervisors and editors.</p>
+      </div>
+      <div class="info-box reveal">
+        <h3>Production</h3>
+        <p>Full production, mixing &amp; mastering across pop, rock, Americana, soul, country &amp; hip hop.</p>
+      </div>
+      <div class="info-box reveal">
+        <h3>Turnaround</h3>
+        <p>Pricing and timeline discussed once I understand the scope of your project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>

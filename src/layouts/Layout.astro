@@ -1,0 +1,95 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "David Thiele is an award-winning producer, songwriter, and artist. Music available for licensing and sync — placements on Fox, CBS, ABC, The CW, Showtime, Telemundo, and more.",
+  ogImage = "/images/og-preview.jpg"
+} = Astro.props;
+
+const siteUrl = 'https://davidthiele.com';
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
+const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={absoluteOgImage}>
+  <meta name="twitter:image" content={absoluteOgImage}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href={canonicalUrl}>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <!-- Person / MusicGroup Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "David Thiele",
+      "alternateName": "THEEL",
+      "jobTitle": "Music Producer, Songwriter, Artist",
+      "url": "https://davidthiele.com",
+      "email": "david@macawish.com",
+      "sameAs": [],
+      "memberOf": {
+        "@type": "Organization",
+        "name": "THEEL GOOD MUSIC",
+        "description": "BMI-affiliated music publisher"
+      }
+    }
+  </script>
+</head>
+<body>
+  <Nav />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    // Sticky nav
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav?.classList.toggle('stuck', window.scrollY > 48);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('open');
+      if (hamburger) hamburger.textContent = mobileMenu?.classList.contains('open') ? '✕' : '☰';
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
+    reveals.forEach(el => io.observe(el));
+
+    document.querySelectorAll('.t-grid, .svc-list, .credits-row').forEach(grid => {
+      grid.querySelectorAll('.reveal').forEach((el, i) => {
+        (el as HTMLElement).style.transitionDelay = `${i * 70}ms`;
+      });
+    });
+  </script>
+</body>
+</html>

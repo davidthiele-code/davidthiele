@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const promises = [
+  'Sound great.',
+  'Be competitive with modern commercial releases.',
+  'Be ready for digital streamers — Spotify, Apple Music, Amazon Music, and more.',
+  'Be pitch-friendly for sync licensing.',
+  'Be ready for whatever else you want to do with your music.',
+];
+
+const reviews = [
+  { quote: "I have worked with dozens and dozens of talented producers over the course of my music journey, and time and time again I keep coming back to David. David's work exudes such a lively, chunky human quality while sounding modern and impactful. He's a Swiss army knife too, able to handle whatever you throw at him. I could talk all day about how great he is but I'll leave it at “Hire this man!” He will knock it out of the park.", name: 'Joe Uzzo', role: 'Artist / Songwriter / Producer — FAVORITES, New Sheriffs' },
+  { quote: 'David is an incredible producer!!! We have worked on multiple songs now and with every song it gets better and better. He is extremely meticulous with the production, mix and master until he makes sure the song is perfect. You should hire him… just do it!', name: 'Lauren Light', role: 'Artist' },
+  { quote: 'David is among the top producers I have worked with, and I’ve worked with many of the greats. He is both highly creative and adventurous while having a precision and attention to detail I have rarely seen. He gives honest, thoughtful feedback, but doesn’t let his ego get in the way if you have notes for him. I recommend him highly.', name: 'Justina Shandler', role: 'Artist / Songwriter — JELAINA' },
+  { quote: 'I run a sync licensing agency & music production house and David is one of our top go to producers when we need high quality work done quickly. He always delivers and is wonderful to work with!', name: 'Celia Rose', role: 'Founder, What Up Pitches' },
+  { quote: 'David is one of the utmost professionals I’ve ever worked with. I’ve also seen him blood, sweat & tear over a project & have no problem starting all over so long as it was making it the best it could be — and that is why I give him 5 stars all around.', name: 'Rachel McGoye', role: 'Artist / Songwriter' },
+  { quote: 'A jack-of-all-trades producer, David would be an excellent person to hire for any of your modern production needs. My favorite part about working with David is his vocal treatment — no one makes my voice shine with clarity and depth quite like he does.', name: 'Alexa Jaye', role: 'Artist' },
+  { quote: 'David is one of the best producers I’ve worked with over the years! He’s extremely talented, professional, quick and is super fun to work and collaborate with. You won’t regret hiring him, he is stellar!', name: 'Chelsey Coy', role: 'Artist / Vocalist — Single Girl, Married Girl' },
+  { quote: 'From day 1 it was easy, collaborative & tons of fun! David & I worked remotely with a time frame, still I felt like he took time to understand my brand, my vision & the result was better than I imagined. I highly recommend him on every level!', name: 'Jennifer Herbig', role: 'Artist — a girl named jaen' },
+  { quote: 'David is a fantastic producer. He’s very easy to work with, listens to feedback and is great at hearing a reference track along with a worktape and translating that into a stellar, original production. No ego, no drama, great work ethic.', name: 'Elaine Ryan', role: 'Artist / Songwriter — JELAINA' },
+  { quote: 'David has produced a few of my songs and I am always blown away by his musicality. He always brings something new to the production, and his turnaround is incredible especially given how high the quality is. He is totally reliable — and a lovely guy too.', name: 'Harriet Thomas', role: 'Songwriter' },
+];
+---
+
+<Layout
+  title="Hire David Thiele for Production, Mixing & Mastering"
+  description="30 years of production experience across pop, rock, Americana, soul, country, and hip hop. Sync-ready, streaming-ready productions."
+>
+
+<style>
+.page-hero{background:var(--bg);padding:160px 28px 70px;text-align:center}
+.page-hero h1{font-family:var(--serif);font-size:clamp(32px,4.4vw,54px);font-weight:600;color:var(--text);margin-bottom:16px}
+.page-hero h1 em{font-style:italic;color:var(--accent-bright);font-weight:500}
+.page-hero p{font-size:17px;color:var(--text-body);max-width:640px;margin:0 auto;line-height:1.75}
+.bio-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:64px;align-items:start}
+.bio-grid p{font-size:16px;color:var(--text-body);line-height:1.8;margin-bottom:18px}
+@media(max-width:860px){.bio-grid{grid-template-columns:1fr;gap:36px}}
+</style>
+
+<div class="page-hero">
+  <span class="tag-line" style="justify-content:center">Production · Mixing · Mastering</span>
+  <h1>I love producing music and bringing songs <em>to life.</em></h1>
+</div>
+
+<section class="sec sec-1" style="padding-top:0">
+  <div class="container bio-grid">
+    <div class="reveal">
+      <p>I've been producing music for 30 years, developing and honing skills in production, mixing, and mastering across a wide variety of styles — pop, rock, Americana, soul, country, hip hop, and rap. I play guitar, piano, and bass, and program everything else.</p>
+      <p>I also have relationships with a handful of great musicians who bring live drums, strings, and horns into a production, and I own a full toolkit of top professional-quality industry-standard virtual instruments and plugins.</p>
+      <p>So please check out the reviews below from some of the amazing writers and artists I've worked with, and feel free to reach out with any questions. We can talk pricing once I have an idea of what the project is — looking forward to connecting and taking your music to the next level.</p>
+      <a href="/contact" class="btn-gold" style="margin-top:12px">Start a Project</a>
+    </div>
+    <div class="reveal">
+      <div class="svc-list">
+        {promises.map((p, i) => (
+          <div class="svc-item">
+            <span class="num">0{i+1}</span>
+            <p>{p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-2">
+  <div class="container">
+    <div class="s-header center reveal">
+      <span class="tag-line">Reviews</span>
+      <h2 class="s-title">From writers &amp; artists I've worked with</h2>
+    </div>
+    <div class="t-grid">
+      {reviews.map(r => (
+        <div class="t-card reveal">
+          <p class="t-quote">{r.quote}</p>
+          <div>
+            <div class="t-name">{r.name}</div>
+            <div class="t-role">{r.role}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="container">
+    <h2>Ready to start?</h2>
+    <p>Tell me about the project and I'll follow up with next steps and pricing.</p>
+    <a href="/contact" class="btn-dark">Reach Out</a>
+  </div>
+</section>
+
+</Layout>
