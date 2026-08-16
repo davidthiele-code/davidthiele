@@ -1,5 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const albums = [
+  {
+    title: 'Beautiful Mess',
+    year: '2008',
+    art: '/images/albums/beautiful-mess.jpg',
+    spotify: 'https://open.spotify.com/album/5ZhFWTIj393PQpBFBwUzGp',
+    apple: 'https://music.apple.com/us/album/beautiful-mess/280856550',
+  },
+  {
+    title: 'Truth in the Making',
+    year: '2013 · EP',
+    art: '/images/albums/truth-in-the-making.jpg',
+    spotify: 'https://open.spotify.com/album/5L6bH6FKlxVuuzr7vqKxFy',
+    apple: 'https://music.apple.com/us/album/truth-in-the-making-ep/591058244',
+  },
+  {
+    title: 'The Opening Act',
+    year: '2004',
+    art: '/images/albums/the-opening-act.jpg',
+    spotify: 'https://open.spotify.com/album/4b5rKYIPnTaWBrN6NZOljz',
+    apple: 'https://music.apple.com/us/album/the-opening-act/14117596',
+  },
+];
 ---
 
 <Layout
@@ -13,7 +37,20 @@ import Layout from '../layouts/Layout.astro';
 .page-hero h1 em{font-style:normal;color:var(--accent-bright);font-weight:700}
 .page-hero p{font-size:17px;color:var(--text-body);max-width:560px;margin:0 auto;line-height:1.7}
 .player-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
-.player-wrap iframe{width:100%;border:0;display:block;min-height:640px}
+.player-wrap iframe{width:100%;aspect-ratio:480/395;height:auto;border:0;display:block}
+@media(max-width:640px){.player-wrap iframe{aspect-ratio:480/620}}
+.albums-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.album-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:box-shadow 0.3s,border-color 0.3s,transform 0.3s}
+.album-card:hover{box-shadow:var(--shadow-lg);border-color:rgba(212,166,74,0.35);transform:translateY(-3px)}
+.album-art{aspect-ratio:1;overflow:hidden}
+.album-art img{width:100%;height:100%;object-fit:cover;display:block}
+.album-info{padding:20px 22px 24px}
+.album-info h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--text);margin-bottom:4px}
+.album-info .album-year{font-family:var(--sans);font-size:12.5px;color:var(--text-muted);letter-spacing:0.02em;margin-bottom:16px}
+.album-links{display:flex;gap:10px}
+.album-links a{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--text-body);border:1px solid var(--border);border-radius:100px;padding:7px 14px;transition:color 0.2s,border-color 0.2s}
+.album-links a:hover{color:var(--accent-bright);border-color:var(--accent-bright)}
+@media(max-width:860px){.albums-grid{grid-template-columns:1fr;gap:20px}}
 </style>
 
 <div class="page-hero">
@@ -26,11 +63,42 @@ import Layout from '../layouts/Layout.astro';
   <div class="container reveal on">
     <div class="player-wrap">
       <iframe
-        src="https://davidthiele.disco.ac/e/p/2930075"
+        id="disco-playlist-2930075"
+        name="disco-playlist-2930075"
+        class="disco-embed"
+        src="https://davidthiele.disco.ac/e/p/2930075?download=false&s=v2%3Alegacy%3A--p7ME-IYTEvq9GZe4jb3ilfAzceTLV074_XvuKgQWk&artwork=true&color=%234E98FF&theme=white"
         loading="lazy"
+        allowfullscreen
         allow="autoplay; encrypted-media"
         title="David Thiele — Music Library on Disco"
       ></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-2">
+  <div class="container">
+    <div class="s-header center reveal">
+      <span class="tag-line">Discography</span>
+      <h2 class="s-title">Albums &amp; <em>releases</em></h2>
+      <p class="s-sub">Full-length releases available now on Spotify, Apple Music, and everywhere else you stream.</p>
+    </div>
+    <div class="albums-grid">
+      {albums.map(a => (
+        <div class="album-card reveal">
+          <div class="album-art">
+            <img src={a.art} alt={`${a.title} — album cover`} loading="lazy">
+          </div>
+          <div class="album-info">
+            <h3>{a.title}</h3>
+            <div class="album-year">{a.year}</div>
+            <div class="album-links">
+              <a href={a.spotify} target="_blank" rel="noopener">Spotify</a>
+              <a href={a.apple} target="_blank" rel="noopener">Apple Music</a>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
