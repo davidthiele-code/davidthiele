@@ -33,7 +33,8 @@ const reviews = [
 .about-row span:last-child{color:var(--text);text-align:right}
 
 .rec-teaser{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.rec-teaser-art{aspect-ratio:1;background:linear-gradient(135deg,var(--bg3),var(--bg2));border:1px solid var(--border);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center}
+.rec-teaser-art{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+.rec-teaser-art iframe{width:100%;aspect-ratio:480/395;height:auto;border:0;display:block}
 @media(max-width:860px){.about-sec,.rec-teaser{grid-template-columns:1fr;gap:32px}}
 </style>
 
@@ -43,7 +44,7 @@ const reviews = [
     <h1>Music that earns its place <em>in the scene.</em></h1>
     <p>David Thiele is an award-winning artist, songwriter, and producer. His catalog offers easy, one-stop options for music supervisors and editors — plus custom composition for film, TV, and advertising, backed by a team of trusted songwriters and producers.</p>
     <div class="hero-btns">
-      <a href="/recordings" class="btn-gold">Browse the Catalog</a>
+      <a href="#catalog" class="btn-gold">Listen to the Catalog</a>
       <a href="/hire-production-mixing-mastering" class="btn-ghost">Hire Me to Produce</a>
     </div>
     <div class="hero-wave" aria-hidden="true">
@@ -84,18 +85,25 @@ const reviews = [
   </div>
 </section>
 
-<section class="sec sec-2">
+<section id="catalog" class="sec sec-2">
   <div class="container rec-teaser">
     <div class="reveal">
       <span class="tag-line">Music Library</span>
       <h2 class="s-title">Available for <em>sync</em> right now.</h2>
-      <p class="s-sub">A growing catalog of one-stop, pitch-ready tracks — cleared and easy to license for supervisors and editors working against a deadline.</p>
-      <a href="/recordings" class="btn-gold" style="margin-top:32px">Listen to the Catalog</a>
+      <p class="s-sub">A growing catalog of one-stop, pitch-ready tracks — cleared and easy to license for supervisors and editors working against a deadline. Press play to browse the full library.</p>
+      <a href="/recordings" class="btn-gold" style="margin-top:32px">See My Albums</a>
     </div>
     <div class="rec-teaser-art reveal">
-      <div class="waveform">
-        {Array.from({length: 22}).map((_, i) => <span style={`height:${20 + Math.abs(11-i)*3.5}px`}></span>)}
-      </div>
+      <iframe
+        id="disco-playlist-2930075"
+        name="disco-playlist-2930075"
+        class="disco-embed"
+        src="https://davidthiele.disco.ac/e/p/2930075?download=false&s=v2%3Alegacy%3A--p7ME-IYTEvq9GZe4jb3ilfAzceTLV074_XvuKgQWk&artwork=true&color=%234E98FF&theme=white"
+        loading="lazy"
+        allowfullscreen
+        allow="autoplay; encrypted-media"
+        title="David Thiele — Sync Licensing Catalog on Disco"
+      ></iframe>
     </div>
   </div>
 </section>

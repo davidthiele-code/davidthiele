@@ -27,8 +27,8 @@ const albums = [
 ---
 
 <Layout
-  title="Recordings | David Thiele — Music Library Available for Sync"
-  description="David Thiele's music library — available for licensing and sync. Listen to the full catalog."
+  title="Recordings | David Thiele — Albums &amp; Releases"
+  description="David Thiele's albums and releases — Beautiful Mess, Truth in the Making, and The Opening Act. Stream on Spotify and Apple Music."
 >
 
 <style>
@@ -36,9 +36,6 @@ const albums = [
 .page-hero h1{font-family:var(--serif);font-size:clamp(34px,4.6vw,58px);font-weight:600;color:var(--text);margin-bottom:16px}
 .page-hero h1 em{font-style:normal;color:var(--accent-bright);font-weight:700}
 .page-hero p{font-size:17px;color:var(--text-body);max-width:560px;margin:0 auto;line-height:1.7}
-.player-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
-.player-wrap iframe{width:100%;aspect-ratio:480/395;height:auto;border:0;display:block}
-@media(max-width:640px){.player-wrap iframe{aspect-ratio:480/620}}
 .albums-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .album-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:box-shadow 0.3s,border-color 0.3s,transform 0.3s}
 .album-card:hover{box-shadow:var(--shadow-lg);border-color:rgba(212,166,74,0.35);transform:translateY(-3px)}
@@ -54,38 +51,16 @@ const albums = [
 </style>
 
 <div class="page-hero">
-  <span class="tag-line" style="justify-content:center">Music Library</span>
-  <h1>Available for <em>licensing</em> &amp; sync</h1>
-  <p>One-stop, pitch-ready tracks for music supervisors and editors. Press play below to browse the full catalog.</p>
+  <span class="tag-line" style="justify-content:center">Discography</span>
+  <h1>Albums &amp; <em>releases</em></h1>
+  <p>Full-length records and EPs from David Thiele — stream them wherever you listen.</p>
 </div>
 
 <section class="sec sec-1" style="padding-top:0">
-  <div class="container reveal on">
-    <div class="player-wrap">
-      <iframe
-        id="disco-playlist-2930075"
-        name="disco-playlist-2930075"
-        class="disco-embed"
-        src="https://davidthiele.disco.ac/e/p/2930075?download=false&s=v2%3Alegacy%3A--p7ME-IYTEvq9GZe4jb3ilfAzceTLV074_XvuKgQWk&artwork=true&color=%234E98FF&theme=white"
-        loading="lazy"
-        allowfullscreen
-        allow="autoplay; encrypted-media"
-        title="David Thiele — Music Library on Disco"
-      ></iframe>
-    </div>
-  </div>
-</section>
-
-<section class="sec sec-2">
   <div class="container">
-    <div class="s-header center reveal">
-      <span class="tag-line">Discography</span>
-      <h2 class="s-title">Albums &amp; <em>releases</em></h2>
-      <p class="s-sub">Full-length releases available now on Spotify, Apple Music, and everywhere else you stream.</p>
-    </div>
     <div class="albums-grid">
       {albums.map(a => (
-        <div class="album-card reveal">
+        <div class="album-card reveal on">
           <div class="album-art">
             <img src={a.art} alt={`${a.title} — album cover`} loading="lazy">
           </div>
@@ -105,9 +80,9 @@ const albums = [
 
 <section class="cta-sec">
   <div class="container">
-    <h2>Need something custom?</h2>
-    <p>If nothing in the catalog is quite right, I write and produce custom music for film, TV, and advertising.</p>
-    <a href="/hire-production-mixing-mastering" class="btn-dark">Hire Me to Produce</a>
+    <h2>Looking for the sync licensing catalog?</h2>
+    <p>The full pitch-ready library for music supervisors and editors is streamable on the home page.</p>
+    <a href="/#catalog" class="btn-dark">Browse the Catalog</a>
   </div>
 </section>
 
