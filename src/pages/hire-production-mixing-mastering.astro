@@ -31,10 +31,12 @@ const reviews = [
 <style>
 .page-hero{background:var(--bg);padding:160px 28px 70px;text-align:center}
 .page-hero h1{font-family:var(--serif);font-size:clamp(32px,4.4vw,54px);font-weight:600;color:var(--text);margin-bottom:16px}
-.page-hero h1 em{font-style:italic;color:var(--accent-bright);font-weight:500}
+.page-hero h1 em{font-style:normal;color:var(--accent-bright);font-weight:700}
 .page-hero p{font-size:17px;color:var(--text-body);max-width:640px;margin:0 auto;line-height:1.75}
 .bio-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:64px;align-items:start}
 .bio-grid p{font-size:16px;color:var(--text-body);line-height:1.8;margin-bottom:18px}
+.studio-photo{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-lg);max-height:560px}
+.studio-photo img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:860px){.bio-grid{grid-template-columns:1fr;gap:36px}}
 </style>
 
@@ -43,7 +45,15 @@ const reviews = [
   <h1>I love producing music and bringing songs <em>to life.</em></h1>
 </div>
 
-<section class="sec sec-1" style="padding-top:0">
+<section class="sec sec-1" style="padding-top:0;padding-bottom:0">
+  <div class="container">
+    <div class="studio-photo reveal">
+      <img src="/images/studio-desk.jpg" alt="David Thiele's production studio desk and monitors" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-1">
   <div class="container bio-grid">
     <div class="reveal">
       <p>I've been producing music for 30 years, developing and honing skills in production, mixing, and mastering across a wide variety of styles — pop, rock, Americana, soul, country, hip hop, and rap. I play guitar, piano, and bass, and program everything else.</p>

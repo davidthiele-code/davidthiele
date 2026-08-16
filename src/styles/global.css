@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
@@ -24,7 +24,7 @@ button{font-family:inherit;cursor:pointer}
   --radius:4px;
   --radius-lg:8px;
   --max-w:1160px;
-  --serif:'Fraunces',serif;
+  --serif:'Space Grotesk',sans-serif;
   --sans:'Inter',sans-serif;
 }
 
@@ -44,7 +44,7 @@ h1.s-title,h2.s-title{
   font-weight:600;line-height:1.08;letter-spacing:-0.01em;
   color:var(--text);margin-bottom:20px;
 }
-h2.s-title em,h1.s-title em{font-style:italic;color:var(--accent-bright);font-weight:500}
+h2.s-title em,h1.s-title em{font-style:normal;color:var(--accent-bright);font-weight:700}
 .s-sub{font-size:17px;color:var(--text-body);line-height:1.75;max-width:560px}
 .s-header{margin-bottom:56px}
 .s-header.center{text-align:center}
@@ -86,7 +86,7 @@ h2.s-title em,h1.s-title em{font-style:italic;color:var(--accent-bright);font-we
 /* TESTIMONIALS */
 .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .t-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:30px 28px;display:flex;flex-direction:column;gap:18px}
-.t-quote{font-family:var(--serif);font-size:16.5px;line-height:1.6;color:var(--text-body);font-style:italic}
+.t-quote{font-family:var(--sans);font-size:15.5px;line-height:1.65;color:var(--text-body);font-style:italic}
 .t-quote::before{content:'"';color:var(--accent)}
 .t-quote::after{content:'"';color:var(--accent)}
 .t-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--text);margin-top:auto}
